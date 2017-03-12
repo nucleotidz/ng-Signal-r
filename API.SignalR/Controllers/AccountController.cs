@@ -5,11 +5,12 @@ using System.Net.Http;
 using System.Web.Http;
 using API.Model;
 using System.Web.Http.Cors;
+using System.Collections.Generic;
 
 namespace API.SignalR.Controllers
 {
     [RoutePrefix("api/Account")]
-    public class AccountController : ApiController
+    public class AccountController : SignalControllerWithHub<Socket>
     {
         IAccountBL _account;
         public AccountController()
@@ -28,13 +29,16 @@ namespace API.SignalR.Controllers
         [Route("Save")]
         public HttpResponseMessage Save(AccountModel model)
         {
-            return Request.CreateResponse(HttpStatusCode.OK, _account.Save(model));
+            bool suucess= _account.Save(model);
+            Hub.Clients.All.Refresh("OK");
+            return Request.CreateResponse(HttpStatusCode.OK, suucess);
         }
 
         [HttpGet]
         [Route("Update/Account/{AccountNumber}/Amount/{Amount}")]
         public HttpResponseMessage Update(string AccountNumber, string Amount)
         {
+            
             return Request.CreateResponse(HttpStatusCode.OK, _account.Update(AccountNumber,Amount));
         }
 
@@ -42,7 +46,10 @@ namespace API.SignalR.Controllers
         [Route("Delete/Account/{AccountNumber}")]
         public HttpResponseMessage Delete(string AccountNumber)
         {
-            return Request.CreateResponse(HttpStatusCode.OK, _account.Delete(AccountNumber));
+           
+             bool Send= _account.Delete(AccountNumber);
+             Hub.Clients.All.Refresh("OK");
+             return Request.CreateResponse(HttpStatusCode.OK, Send);
         }
     }
 }

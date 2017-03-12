@@ -10,7 +10,7 @@ function ($scope, $rootScope, API, $q, $state, Socket) {
     vm.AddAccount = function () {
         var data = API.CreateAccount(vm.AccountModel);
         $q.all([data.$promise]).then(function (response) {          
-            soc.invoke("Refresh");
+            //soc.invoke("Refresh");
         });    
     }
    
