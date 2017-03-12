@@ -230,6 +230,16 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\API.BL\API.BL.csproj">
+      <Project>{3801d180-579b-46b2-a20f-55056a261e2c}</Project>
+      <Name>API.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\API.Model\API.Model.csproj">
+      <Project>{f4ebd2e2-03e8-405c-8ead-fd9b05ff7cac}</Project>
+      <Name>API.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

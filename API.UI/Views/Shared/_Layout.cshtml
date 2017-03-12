@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>Ahmar Husain</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/Scripts/Jquery/js", "~/Scripts/Angular/js", "~/Scripts/Controller/js")
 
@@ -11,14 +11,13 @@
 </head>
 <body>
 
-    <div class="container body-content">
+    <div class="container ">
         <div ui-view="Header"></div>
-        <div ui-view="content"></div>
+        <div class="body-content" ui-view="content"></div>
         @RenderBody()
-
     </div>
 
 
-    @RenderSection("Signal", required: false)
+
 </body>
 </html>
