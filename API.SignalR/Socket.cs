@@ -12,7 +12,7 @@ namespace API.SignalR
     {
         public void Refresh(string name)
         {
-            Clients.All.Refresh("Refreshed by " + name);
+            Clients.Others.Refresh("Refreshed by " + name);            
         }
     }
 }

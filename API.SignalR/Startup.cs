@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.Owin;
 using Owin;
 using Microsoft.AspNet.SignalR;
+using Microsoft.Owin.Cors;
 [assembly: OwinStartup(typeof(API.SignalR.Startup))]
 namespace API.SignalR
 {
@@ -11,8 +12,13 @@ namespace API.SignalR
     {
         public void Configuration(IAppBuilder app)
         {
-            app.MapSignalR();
-           
+            //app.MapSignalR();
+            app.Map("/signalr", map =>
+            {
+               map.UseCors(CorsOptions.AllowAll);
+                var hubConfiguration = new HubConfiguration {};
+                map.RunSignalR(hubConfiguration);
+            });
         }
     }
 }

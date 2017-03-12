@@ -20,14 +20,14 @@ app.config(function ($stateProvider, $urlRouterProvider) {
            
 
         }
-    }).state('Home.About', {
-        url: 'About',
+    }).state('Home.Create', {
+        url: 'Create',
         views: {
           
             'content@': {
-                templateUrl: 'Home/About',
-                controller: 'AboutUsController',
-                params: {data:null}
+                templateUrl: 'Home/Create',
+                controller: 'CreateController',
+                controllerAs: "vm"
             },
           
         }

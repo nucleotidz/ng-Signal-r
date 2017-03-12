@@ -1,15 +1,20 @@
-﻿app.controller('HomeController', ['$scope', '$rootScope', '$http', 
-function ($scope, $rootScope, $http) {   
+﻿app.controller('HomeController', ['$scope', '$rootScope', 'API','$q' ,'$state','Socket',
+function ($scope, $rootScope, API, $q, $state, Socket) {
     var vm = this;
-    var connection = $.hubConnection('http://localhost/API/signalr', { useDefaultPath: false });
-    var Proxy = connection.createHubProxy('Socket');
-    connection.start({ withCredentials: false }).done(function () {
-        alert("Connection-Established-With-Server::at port 52070")
+    vm.Account = {};
+    init();
+    var siganlled = Socket.Recive('Refresh');
+    $q.all([siganlled]).then(function (response) {
+        init();
     });
-    vm.Add = function () {
-        Proxy.invoke("Refresh", "Ahmar");
+    function init(){
+        var data = API.GetAccount({});
+        $q.all([data.$promise]).then(function (response) {
+            vm.Account = response[0];
+        });
+       
     }
-    Proxy.on('Refresh', function (message) {
-        alert(message)
-    });
+    vm.Add = function () {
+        $state.go('.Create');
+    }
 }]);
