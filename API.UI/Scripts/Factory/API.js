@@ -10,6 +10,10 @@
             url: "http://localhost/API/API/Account/Save",
             isArray: false,
             param: {}
+        }, DeleteAccount: {
+            method: "GET",
+            url: "http://localhost/API/API/Account/Delete/Account/:AccountNumber",
+            isArray: false,            
         }
 
     });

@@ -14,5 +14,9 @@ namespace API.SignalR
         {
             Clients.Others.Refresh("Refreshed by " + name);            
         }
+        public void Delete(string name)
+        {
+            Clients.Others.Delete("Delete");
+        }
     }
 }

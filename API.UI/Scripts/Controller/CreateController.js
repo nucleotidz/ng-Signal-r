@@ -11,8 +11,7 @@ function ($scope, $rootScope, API, $q, $state, Socket) {
         $q.all([data.$promise]).then(function (response) {
             Socket.Invoke("Refresh", "Ahmar")
           
-        });
-     
+        });    
     }
-
+   
 }]);

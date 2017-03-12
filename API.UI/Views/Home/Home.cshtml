@@ -9,6 +9,7 @@
             <th>Name</th>
             <th>Account Number</th>
             <th>Amount</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -17,8 +18,10 @@
             <td>{{account.Name}}</td>
             <td>{{account.AccountNumber}}</td>
             <td>{{account.Amount}}</td>
+            <td>  <button class="btn btn-danger" ng-click="vm.Delete(account.AccountNumber)" value="Delete">Delete</button></td> 
+            
         </tr>
       
     </tbody>
 </table>
-<input type="button" value="update" class="btn btn-primary" ng-click="vm.Add()" />
+<input type="button" value="Create" class="btn btn-primary" ng-click="vm.Add()" />
