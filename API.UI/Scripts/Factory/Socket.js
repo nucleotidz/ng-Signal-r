@@ -1,20 +1,34 @@
-﻿app.factory('Socket', function ($rootScope, $q) {
-    var connection = $.hubConnection('http://localhost/API/signalr', { useDefaultPath: false });
-    var Proxy = connection.createHubProxy('Socket');
-    return {
-        Connect: function () {
-            connection.start({ withCredentials: false }).done(function () { });
-        },
-        Invoke: function (name, param) {
-            Proxy.invoke(name, param)
-        },
-        Recive: function (eventname) {
-            var defer = $q.defer();
-            Proxy.on(eventname, function (result) {
-                defer.resolve(result);
-            });
-            return defer.promise;
-        }
-    }
+﻿//app.factory('Socket', function ($rootScope) {
+app.factory('Socket', ['$rootScope', function ($rootScope) {
 
-});
+    function SocketFactory() {
+        var connection = $.hubConnection('http://localhost/API/signalr', { useDefaultPath: false });
+        var proxy = connection.createHubProxy('Socket');
+
+        connection.start().done(function () {
+        });
+
+        return {
+            on: function (eventName, callback) {
+                proxy.on(eventName, function (result) {
+                    $rootScope.$apply(function () {
+                        if (callback) {
+                            callback(result);
+                        }
+                    });
+                });
+            },
+            invoke: function (methodName, param) {
+                if (param != undefined) {
+                    proxy.invoke(methodName, param)
+                }
+                else {
+                    proxy.invoke(methodName);
+                }
+
+            }
+        };
+    };
+
+    return SocketFactory;
+}]);

@@ -6,11 +6,11 @@ function ($scope, $rootScope, API, $q, $state, Socket) {
         AccountNumber: "",
         Amount: "",
     }
+    var soc = Socket();
     vm.AddAccount = function () {
         var data = API.CreateAccount(vm.AccountModel);
-        $q.all([data.$promise]).then(function (response) {
-            Socket.Invoke("Refresh", "Ahmar")
-          
+        $q.all([data.$promise]).then(function (response) {          
+            soc.invoke("Refresh","Ahmatr");
         });    
     }
    
