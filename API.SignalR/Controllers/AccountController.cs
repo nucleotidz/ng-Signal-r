@@ -29,9 +29,9 @@ namespace API.SignalR.Controllers
         [Route("Save")]
         public HttpResponseMessage Save(AccountModel model)
         {
-            bool suucess= _account.Save(model);
-            Hub.Clients.All.Refresh("OK");
-            return Request.CreateResponse(HttpStatusCode.OK, suucess);
+            bool IsSucess= _account.Save(model);
+            Hub.Clients.All.Refresh(_account.Get());
+            return Request.CreateResponse(HttpStatusCode.OK, IsSucess);
         }
 
         [HttpGet]
@@ -46,10 +46,10 @@ namespace API.SignalR.Controllers
         [Route("Delete/Account/{AccountNumber}")]
         public HttpResponseMessage Delete(string AccountNumber)
         {
-           
-             bool Send= _account.Delete(AccountNumber);
-             Hub.Clients.All.Refresh("OK");
-             return Request.CreateResponse(HttpStatusCode.OK, Send);
+
+            bool IsSucess = _account.Delete(AccountNumber);
+             Hub.Clients.All.Refresh(_account.Get());
+             return Request.CreateResponse(HttpStatusCode.OK, IsSucess);
         }
     }
 }

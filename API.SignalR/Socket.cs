@@ -9,6 +9,7 @@ namespace API.SignalR
 {
     
     public class Socket : Hub
-    {      
+    {
+      
     }
 }

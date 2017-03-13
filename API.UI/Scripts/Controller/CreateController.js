@@ -5,12 +5,12 @@ function ($scope, $rootScope, API, $q, $state, Socket) {
         Name: "",
         AccountNumber: "",
         Amount: "",
-    }
-    var soc = Socket();
+    }   
     vm.AddAccount = function () {
         var data = API.CreateAccount(vm.AccountModel);
-        $q.all([data.$promise]).then(function (response) {          
-            //soc.invoke("Refresh");
+        $q.all([data.$promise]).then(function (response) {
+            console.log(response);
+            //Handle Resopnse from the service .
         });    
     }
    

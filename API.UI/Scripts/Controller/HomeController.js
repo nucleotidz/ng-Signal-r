@@ -5,7 +5,7 @@ function ($scope, $rootScope, API, $q, $state, Socket) {
     init();
     var soc = Socket();
     soc.on('Refresh', function (data) {
-        init();
+        vm.Account = data;
     });      
     function init() {       
         var data = API.GetAccount({});
@@ -19,8 +19,7 @@ function ($scope, $rootScope, API, $q, $state, Socket) {
     }
     vm.Delete = function (account) {
         var data = API.DeleteAccount({ 'AccountNumber': account });
-        $q.all([data.$promise]).then(function (response) {
-           // soc.invoke("Delete")
+        $q.all([data.$promise]).then(function (response) {    
             init();
         });
     }
