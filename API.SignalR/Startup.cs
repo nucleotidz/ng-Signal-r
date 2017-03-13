@@ -15,8 +15,11 @@ namespace API.SignalR
             //app.MapSignalR();
             app.Map("/signalr", map =>
             {
-               map.UseCors(CorsOptions.AllowAll);
-                var hubConfiguration = new HubConfiguration {};
+                map.UseCors(CorsOptions.AllowAll);
+                var hubConfiguration = new HubConfiguration
+                {
+                    EnableDetailedErrors = true,
+                };
                 map.RunSignalR(hubConfiguration);
             });
         }
