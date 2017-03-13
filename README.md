@@ -1,1 +1,1 @@
-In the sample example , i tried to create a Signal R app with angular js and Web API , The applictaion demonstrate how a connected client will get the new data created by a different client without page refresh 
+In the sample example , i tried to create a Signal R app with angular js and Web API , The applictaion demonstrates how a connected client will get the new data created by a different client without page refresh through singal R in single page app.
