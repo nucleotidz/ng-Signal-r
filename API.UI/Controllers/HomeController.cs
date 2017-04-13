@@ -29,5 +29,9 @@ namespace API.UI.Controllers
         {
             return View();
         }
+        public ActionResult WorkFlowDetails()
+        {
+            return View();
+        }
     }
 }
