@@ -15,7 +15,7 @@
     <AssemblyName>API.UI</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -249,6 +249,7 @@
     <Content Include="Scripts\Angular\angular.min.js" />
     <Content Include="Scripts\Angular\app.js" />
     <Content Include="Scripts\Angular\route.js" />
+    <Content Include="Scripts\Controller\AlFrescoController.js" />
     <Content Include="Scripts\Controller\CreateController.js" />
     <Content Include="Scripts\Controller\HomeController.js" />
     <Content Include="Scripts\Factory\API.js" />
@@ -281,6 +282,7 @@
     <Content Include="Views\Home\Header.cshtml" />
     <Content Include="Views\Home\Home.cshtml" />
     <Content Include="Views\Home\Create.cshtml" />
+    <Content Include="Views\Home\Alfresco.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -300,9 +302,10 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>52285</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://yder:91</IISUrl>
+          <IISUrl>http://localhost:52285/</IISUrl>
           <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>http://yder:91</IISAppRootUrl>
+          <IISAppRootUrl>
+          </IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

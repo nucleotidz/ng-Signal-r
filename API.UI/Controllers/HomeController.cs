@@ -25,5 +25,9 @@ namespace API.UI.Controllers
         {
             return View();
         }
+        public ActionResult Alfresco()
+        {
+            return View();
+        }
     }
 }

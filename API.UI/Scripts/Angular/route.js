@@ -32,6 +32,18 @@ app.config(function ($stateProvider, $urlRouterProvider) {
           
         }
 
+    }).state('Home.Alfresco', {
+        url: 'Alfresco',
+        views: {
+
+            'content@': {
+                templateUrl: 'Home/Alfresco',
+                controller: 'AlfrescoController',
+                controllerAs: "vm"
+            },
+
+        }
+
     })
 
 });

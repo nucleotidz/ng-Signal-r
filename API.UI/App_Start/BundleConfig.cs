@@ -28,7 +28,8 @@ namespace API.UI
               bundles.Add(new ScriptBundle("~/Scripts/Controller/js").Include
                     (
                       "~/Scripts/Controller/HomeController.js",
-                      "~/Scripts/Controller/CreateController.js"
+                      "~/Scripts/Controller/CreateController.js",
+                       "~/Scripts/Controller/AlFrescoController.js"
                     ));
               bundles.Add(new ScriptBundle("~/Scripts/Factory/js").Include
                       (
