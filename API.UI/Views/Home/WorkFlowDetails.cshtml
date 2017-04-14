@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -21,7 +20,7 @@
 
                             <li class="active"><a data-toggle="tab" data-target="#Properties" class="text-info"><i class="fa fa-indent"></i> Properties</a></li>
                             <li><a data-toggle="tab" data-target="#workflowInstance" class="text-info"><i class="fa fa-bookmark-o"></i> workflow Instance</a></li>
-                          
+
                         </ul>
 
                         <div class="tab-content">
@@ -32,30 +31,30 @@
                                         <tbody>
 
                                             <tr>
-                                                <td class="text-info"><i class="fa fa-user"></i> Full Name</td>
-                                                <td>Viddhyut Mall</td>
+                                                <td class="text-info"><i class="fa fa-user"></i> Owner</td>
+                                                <td>{{ vm.Properties.owner.firstName}}</td>
                                             </tr>
                                             <tr>
-                                                <td class="text-info"><i class="fa fa-list-ol"></i> Scholar Number</td>
-                                                <td>45</td>
+                                                <td class="text-info"><i class="fa fa-list-ol"></i>State</td>
+                                                <td>{{ vm.Properties.state}}</td>
                                             </tr>
                                             <tr>
-                                                <td class="text-info"><i class="fa fa-book"></i> Medium</td>
-                                                <td>English</td>
+                                                <td class="text-info"><i class="fa fa-book"></i> Start Date</td>
+                                                <td>{{ vm.Properties.properties.bpm_startDate}}</td>
                                             </tr>
                                             <tr>
-                                                <td class="text-info"><i class="fa fa-group"></i> Class &amp; Section</td>
-                                                <td>12-F</td>
+                                                <td class="text-info"><i class="fa fa-group"></i> Task Decription</td>
+                                                <td>{{ vm.Properties.properties.bpm_description}}</td>
                                             </tr>
                                             <tr>
-                                                <td class="text-info"><i class="fa fa-calendar"></i> Birthday</td>
-                                                <td>December 2, 2011</td>
+                                                <td class="text-info"><i class="fa fa-calendar"></i> Task Status</td>
+                                                <td>{{ vm.Properties.properties.bpm_status}}</td>
                                             </tr>
 
                                             <tr>
-                                                <td class="text-info"><i class="fa fa-university"></i> School</td>
+                                                <td class="text-info"><i class="fa fa-university"></i>Priority</td>
                                                 <td>
-                                                    Shyama Mall Girls Inter College
+                                                    {{vm.Properties.propertyLabels.bpm_priority}}
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -67,17 +66,28 @@
                                 <div class="table-responsive panel">
                                     <table class="table">
                                         <tbody>
-
                                             <tr>
-                                                <td class="text-info"><i class="fa fa-home"></i> Address</td>
+                                                <td class="text-info"><i class="fa fa-home"></i> Initiator</td>
                                                 <td>
-                                                    <address>
-                                                        <strong>
-                                                            C-***, Amahiya
-                                                        </strong><br>
-                                                        Kharobar, ****** <br>
-                                                        Gorakhpur, Utter Pradesh, India<br>
-                                                    </address>
+                                                    {{ vm.Properties.workflowInstance.initiator.userName}}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-info"><i class="fa fa-home"></i> Message</td>
+                                                <td>
+                                                    {{ vm.Properties.workflowInstance.message}}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-info"><i class="fa fa-home"></i> Title</td>
+                                                <td>
+                                                    {{ vm.Properties.workflowInstance.title}}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-info"><i class="fa fa-home"></i> Description</td>
+                                                <td>
+                                                    {{ vm.Properties.workflowInstance.description}}
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -85,7 +95,7 @@
                                 </div>
                             </div>
 
-                           
+
 
                         </div>
 
@@ -97,3 +107,5 @@
 
     </div>
 </div>
+
+<button class="btn btn-primary" value="Back" ng-click="vm.Back()">Back</button>

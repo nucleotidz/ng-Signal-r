@@ -2,7 +2,7 @@
     Layout = null;
 }
 
-<button class="btn btn-primary" value="Create" ng-click="vm.Create()">Create</button>
+
 <table class="table table-condensed">
     <thead>
         <tr>
@@ -19,7 +19,9 @@
             <td>{{data.state}}</td>
             <td>{{data.owner.userName}}</td>
             <td> <button class="btn btn-primary" value="Details" ng-click="vm.Details(data.id)">Details</button></td>
-
+            <td> <button class="btn btn-danger" value="Details" ng-click="vm.End(data.id)">End</button></td>
+            <td> <button class="btn btn-danger" value="Details" ng-click="vm.EndWf(data.workflowInstance.id)">End WF</button></td>
         </tr>
     </tbody>
 </table>
+<button class="btn btn-primary" value="Back" ng-click="vm.Back()">Back</button>

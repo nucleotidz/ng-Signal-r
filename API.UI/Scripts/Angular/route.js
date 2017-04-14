@@ -20,7 +20,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         }
     }).state('Home.Create', {
-        url: 'Create',
+       // url: 'Create',
         views: {
 
             'content@': {
@@ -32,7 +32,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         }
 
     }).state('Home.Alfresco', {
-        url: 'Alfresco',
+       // url: 'Alfresco',
         views: {
             'content@': {
                 templateUrl: 'Home/Alfresco',
