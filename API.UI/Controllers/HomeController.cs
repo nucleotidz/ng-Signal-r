@@ -33,5 +33,10 @@ namespace API.UI.Controllers
         {
             return View();
         }
+
+        public ActionResult Folders()
+        {
+            return View();
+        }
     }
 }

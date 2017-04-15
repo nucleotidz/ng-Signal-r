@@ -26,5 +26,7 @@ function ($scope, $rootScope, API, $q, $state, Socket, $http) {
     vm.Get = function () {
         $state.go('.Alfresco');
     }
-
+    vm.Folders = function () {
+        $state.go('.Folders');
+    }
 }]);

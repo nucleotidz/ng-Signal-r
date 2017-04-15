@@ -5,7 +5,7 @@ function ($scope, $state, $http, $stateParams) {
     function Bind() {
         $http({
             method: 'GET',
-            url: 'http://127.0.0.1:8080/alfresco/s/api/task-instances?alf_ticket=TICKET_181070eb597a9730b161f4d56649bc5badd416e9'
+            url: 'http://127.0.0.1:8080/alfresco/s/api/task-instances?alf_ticket=TICKET_113e2296da74eaac6f563ba375b27fde1be66735'
         }).then(function successCallback(response) {
             // alert("hello");
             vm.workflow = response.data.data
@@ -24,7 +24,7 @@ function ($scope, $state, $http, $stateParams) {
           
         $http({
             method: 'POST',
-            url: 'http://127.0.0.1:8080/alfresco/s/api/workflow/task/end/' + workflowId + '?alf_ticket=TICKET_181070eb597a9730b161f4d56649bc5badd416e9'
+            url: 'http://127.0.0.1:8080/alfresco/s/api/workflow/task/end/' + workflowId + '?alf_ticket=TICKET_113e2296da74eaac6f563ba375b27fde1be66735'
         }).then(function successCallback(response) {
             alert('Success');
         }, function errorCallback(response) {
@@ -34,7 +34,7 @@ function ($scope, $state, $http, $stateParams) {
     vm.EndWf = function (workflowId) {
         $http({
             method: 'DELETE',
-            url: ' http://127.0.0.1:8080/alfresco/s/api/workflow-instances/' + workflowId + '?alf_ticket=TICKET_181070eb597a9730b161f4d56649bc5badd416e9'
+            url: ' http://127.0.0.1:8080/alfresco/s/api/workflow-instances/' + workflowId + '?alf_ticket=TICKET_113e2296da74eaac6f563ba375b27fde1be66735'
         }).then(function successCallback(response) {
             alert('Success');
         }, function errorCallback(response) {

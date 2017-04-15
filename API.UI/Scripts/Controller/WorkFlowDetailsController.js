@@ -7,7 +7,7 @@ function ($scope, $state, $http, $stateParams) {
     function Bind() {
         $http({
             method: 'GET',
-            url: 'http://127.0.0.1:8080/alfresco/s/api/task-instances/' + activityId + '?alf_ticket=TICKET_181070eb597a9730b161f4d56649bc5badd416e9'
+            url: 'http://127.0.0.1:8080/alfresco/s/api/task-instances/' + activityId + '?alf_ticket=TICKET_113e2296da74eaac6f563ba375b27fde1be66735'
         }).then(function successCallback(response) {
             vm.Properties = response.data.data
         }, function errorCallback(response) {

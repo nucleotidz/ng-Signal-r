@@ -51,6 +51,15 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         }
 
+    }).state('Home.Folders', {      
+        views: {
+            'content@': {
+                templateUrl: 'Home/Folders',
+                controller: 'FoldersController',
+                controllerAs: "vm"
+            }
+        }
+
     })
 
 });

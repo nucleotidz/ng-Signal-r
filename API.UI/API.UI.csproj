@@ -260,6 +260,7 @@
     <Content Include="Scripts\Angular\route.js" />
     <Content Include="Scripts\Controller\AlFrescoController.js" />
     <Content Include="Scripts\Controller\CreateController.js" />
+    <Content Include="Scripts\Controller\FoldersController.js" />
     <Content Include="Scripts\Controller\HomeController.js" />
     <Content Include="Scripts\Controller\WorkFlowDetailsController.js" />
     <Content Include="Scripts\Factory\API.js" />
@@ -296,6 +297,7 @@
     <Content Include="Views\Home\Create.cshtml" />
     <Content Include="Views\Home\Alfresco.cshtml" />
     <Content Include="Views\Home\WorkFlowDetails.cshtml" />
+    <Content Include="Views\Home\Folders.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
