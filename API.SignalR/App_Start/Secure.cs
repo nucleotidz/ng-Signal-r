@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Hubs;
 using System;
-
+using System.Linq;
 namespace API.SignalR
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
@@ -14,6 +14,10 @@ namespace API.SignalR
 
         public override bool AuthorizeHubConnection(HubDescriptor hubDescriptor, IRequest request)
         {
+            if (!request.Headers.Any(x => x.Key == "Authorization"))
+            {
+                return false;
+            }
             return true;
         }
 
