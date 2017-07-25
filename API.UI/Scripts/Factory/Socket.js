@@ -2,12 +2,16 @@
 app.factory('Socket', ['$rootScope', function ($rootScope) {
 
     function SocketFactory() {
-        var connection = $.hubConnection('http://localhost:52104/signalr', { useDefaultPath: false });
+        var connection = $.hubConnection('http://localhost:52109/signalr', { useDefaultPath: false });
+        connection.logging = true;
+        connection.qs = { 'authorization': 'Ahmar' }
+        $.signalR.ajaxDefaults.headers = { "authorization": "Bearer" };
         connection.connectionSlow(function () {
             console.log('We are currently experiencing difficulties with the connection.')
         });
         connection.disconnected(function () {
             console.log('Disconnected from the server')
+            
         });
         connection.reconnected(function () {
             console.log('Reconnected from the server :)')
