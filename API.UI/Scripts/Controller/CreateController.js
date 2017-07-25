@@ -1,4 +1,4 @@
-﻿app.controller('CreateController', ['$scope', '$rootScope', 'API', '$q', '$state', 'Socket',
+﻿app.controller('CreateController', ['$scope', '$rootScope', 'API', '$q', '$state', 'Socket','$state',
 function ($scope, $rootScope, API, $q, $state, Socket) {
     var vm = this;
     vm.AccountModel = {
@@ -12,6 +12,9 @@ function ($scope, $rootScope, API, $q, $state, Socket) {
             console.log(response);
             //Handle Resopnse from the service .
         });    
+    }
+    vm.Back = function () {
+        $state.go("Home")
     }
    
 }]);

@@ -2,7 +2,7 @@
 app.factory('Socket', ['$rootScope', function ($rootScope) {
 
     function SocketFactory() {
-        var connection = $.hubConnection('http://localhost/API/signalr', { useDefaultPath: false });
+        var connection = $.hubConnection('http://localhost:52104/signalr', { useDefaultPath: false });
         connection.connectionSlow(function () {
             console.log('We are currently experiencing difficulties with the connection.')
         });
@@ -37,7 +37,7 @@ app.factory('Socket', ['$rootScope', function ($rootScope) {
                 }
                 else {
                     proxy.invoke(methodName);
-                }
+                }   
 
             }
         };

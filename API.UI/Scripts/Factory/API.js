@@ -2,17 +2,17 @@
     return $resource('', {}, {
         GetAccount: {
             method: "GET",
-            url: "http://localhost/API/API/Account/Get",
+            url: "http://localhost:52104/API/Account/Get",
             isArray: true,
         },
         CreateAccount: {
             method: "POST",
-            url: "http://localhost/API/API/Account/Save",
+            url: "http://localhost:52104/API/Account/Save",
             isArray: false,
             param: {}
         }, DeleteAccount: {
             method: "GET",
-            url: "http://localhost/API/API/Account/Delete/Account/:AccountNumber",
+            url: "http://localhost:52104/API/Account/Delete/Account/:AccountNumber",
             isArray: false,            
         }
 
