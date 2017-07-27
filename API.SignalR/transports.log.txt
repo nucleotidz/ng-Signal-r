@@ -1,0 +1,8 @@
+SignalR.Transports.TransportHeartBeat Information: 0 : Connection e058d112-5f3e-4c78-8848-1afe821e9702 is New.
+SignalR.Transports.LongPollingTransport Verbose: 0 : DrainWrites(e058d112-5f3e-4c78-8848-1afe821e9702)
+SignalR.Transports.LongPollingTransport Information: 0 : CompleteRequest (e058d112-5f3e-4c78-8848-1afe821e9702)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : Connection e058d112-5f3e-4c78-8848-1afe821e9702 exists. Closing previous connection.
+SignalR.Transports.LongPollingTransport Information: 0 : End(e058d112-5f3e-4c78-8848-1afe821e9702)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(e058d112-5f3e-4c78-8848-1afe821e9702)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(e058d112-5f3e-4c78-8848-1afe821e9702)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(e058d112-5f3e-4c78-8848-1afe821e9702)

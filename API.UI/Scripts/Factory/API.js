@@ -1,4 +1,4 @@
-﻿app.factory('API', function ($resource) {
+﻿app.factory('API', ['$resource', function ($resource) {
     return $resource('', {}, {
         GetAccount: {
             method: "GET",
@@ -17,6 +17,6 @@
         }
 
     });
-});
+}]);
 
 
